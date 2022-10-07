@@ -17,7 +17,7 @@ pip install -r requirements.txt
 ```
 
 # How to run it localy using sqlite3/postgresql/docker
-
+Note: the default database is sqlite3, if you want to set postgresql as default, go to settings.py line 94 and uncomment the following ones. And remove the 87-92 lines. 
 ## Docker
 
 Note: <mark>Add the informations required</mark> in the .env as well as .env example.
@@ -41,14 +41,14 @@ docker-compose up
 Run:
 
 ```
-TEST=TEST ./manage.py migrate
-TEST=TEST ./manage.py create_transac_types
-TEST=TEST ./manage.py runserver
+./manage.py migrate
+./manage.py create_transac_types
+./manage.py runserver
 ```
 
 ## PostgreSQL
 
-Note: To run in your postgresql, you'll need to create the database, and <mark>add the informations required</mark> in the .env as well as .env example.\
+Note: Read the section note first. To run in your postgresql, you'll need to create the database, and <mark>add the informations required</mark> in the .env as well as .env example.\
 \
 Run:
 
@@ -58,6 +58,7 @@ Run:
 ./manage.py runserver
 ```
 ## When done, test it yourself
+To access the docs -> http://localhost:8000/docs/ \
 Access the http://localhost:8000/upload/ or http://localhost:3000/upload/, depending on what method you are running, and upload the CNAB_example_file.txt to the "File uploaded" field.\
 And that's it. DONE!
 
@@ -66,5 +67,14 @@ Note: e2e tests still in devlopment
 
 First, run the Sqlite3 commands and then:
 ```
-TEST=TEST ./manage.py test
+./manage.py test
 ```
+
+## Covarage
+
+ ```
+ coverage run ./manage.py test
+ coverage report
+ # If you want to get the html files for coverage
+ coverage html
+ ```
