@@ -60,3 +60,11 @@ Run:
 ## When done, test it yourself
 Access the http://localhost:8000/upload/ or http://localhost:3000/upload/, depending on what method you are running, and upload the CNAB_example_file.txt to the "File uploaded" field.\
 And that's it. DONE!
+
+## To run tests
+Note: e2e tests still in devlopment
+
+First, run the Sqlite3 commands and then:
+```
+TEST=TEST ./manage.py test
+```
