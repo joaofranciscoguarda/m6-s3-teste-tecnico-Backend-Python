@@ -23,6 +23,7 @@ class TypeModelTets(TestCase):
     self.assertEquals(length, 9)
   
   def test_created_currectly(self):
+    
     obj = Type.objects.filter(kind=1)[0]
     type1 = {'description': 'Débito', 'nature':'Entrada', 'sinal':'+'}
     self.assertEquals(type1['description'], obj.description)

@@ -6,6 +6,7 @@ from rest_framework.views import Response, status
 class CnabViewTest(APITestCase):
   @classmethod
   def setUpTestData(cls) -> None:
+    
     pass
 
   # def test_send_CNAB_example_file(self):
