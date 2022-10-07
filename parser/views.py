@@ -21,7 +21,7 @@ class PlainTextParser(BaseParser):
         """
         return stream.read()
 
-class UploadViewSet(viewsets.ViewSet):
+class UploadViewSet(generics.CreateAPIView):
     serializer_class = UploadSerializer
 
     def create(self, request):
